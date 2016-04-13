@@ -23,4 +23,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       v.customize ["modifyvm", :id, "--memory", "512"]
   end
 
+  # Configuranmos el provisioning mediante shell script
+  config.vm.provision "shell" do |s|
+      s.path "provision/setup.sh"
+  end
+
 end
