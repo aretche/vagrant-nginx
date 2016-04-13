@@ -17,4 +17,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Configuramos que el subirectorio ./src en el host que esté mapeado al /var/www de la máquina virtual
   config.vm.synced_folder "./src", "/var/www", create: true, group: "www-data", owner: "www-data"
 
+  # Configuración específica para el provider virtualbox
+  config.vm.provider "virtualbox" do |v|
+      v.name = "Vagrant con Nginx"
+      v.customize ["modifyvm", :id, "--memory", "1024"]
+  end
+
 end
