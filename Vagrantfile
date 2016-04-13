@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Configuranmos el provisioning mediante shell script
   config.vm.provision "shell" do |s|
-      s.path "provision/setup.sh"
+      s.path = "provision/setup.sh"
   end
 
 end
