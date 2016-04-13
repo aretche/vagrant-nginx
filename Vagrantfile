@@ -20,7 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Configuración específica para el provider virtualbox
   config.vm.provider "virtualbox" do |v|
       v.name = "Vagrant con Nginx"
-      v.customize ["modifyvm", :id, "--memory", "1024"]
+      v.customize ["modifyvm", :id, "--memory", "512"]
   end
 
 end
