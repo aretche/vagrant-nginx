@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
 
   # Configuramos que el subirectorio ./src en el host que esté mapeado al /var/www de la máquina virtual
-  config.vm.synced_folder "./src", "/var/www", create: true, group: "www-data", owner: "www-data"
+  config.vm.synced_folder "./", "/var/www", create: true, group: "www-data", owner: "www-data"
 
   # Configuración específica para el provider virtualbox
   config.vm.provider "virtualbox" do |v|
